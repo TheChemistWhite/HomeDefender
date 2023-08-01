@@ -1,2 +1,2 @@
-# Home-Secure
+# HomeDefender
 Internet of things project: Individual assignement
