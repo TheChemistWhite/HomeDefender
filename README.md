@@ -19,7 +19,7 @@ The Heltec LoRa32 v2 is a development board with 8 MB Flash that uses the EPS32 
 
 ### Sensors
 
-#### KY-026 Pir Sensor Module
+#### HC-SR501 Pir Sensor Module
 <img src="Images/Pir.jpg" alt="alt" width="200"/> 
 The HC-SR501 PIR motion sensor is one of the easiest to connect to an Arduino -or any
 other microcontroller for that matter- and can also be used as a stand alone motion
