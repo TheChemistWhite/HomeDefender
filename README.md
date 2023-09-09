@@ -33,12 +33,12 @@ CW=>long, CCW=> short (3-300 sec) The right prong of the connector is for Vcc (+
 (3.3V) or low (0v)
 
 #### Specification
-● Voltage: 5V
-● Power Consumption: 65 mA
-● TTL output: 3.3V, 0 V
-● Trigger methods: L – disable repeat trigger, H enable repeat trigger
-● Sensing range: less than 120 degree, within 7 meters
-● Temperature: – 15 ~ +70
+- Voltage: 5V
+- Power Consumption: 65 mA
+- TTL output: 3.3V, 0 V
+- Trigger methods: L – disable repeat trigger, H enable repeat trigger
+- Sensing range: less than 120 degree, within 7 meters
+- Temperature: – 15 ~ +70
 
 ### Actuators
 
