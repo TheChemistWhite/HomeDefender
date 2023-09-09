@@ -51,6 +51,7 @@ Here the “source” does not mean power. But rather refers to the shock source
 internal sources without shocks, so if a DC signal can not make it tweet. Must 2K ~ 5K
 square wave to Drive it.
 
+#### Specification
 - Operating Voltage 3.5V ~ 5.5V
 - Maximum Current 30mA / 5VDC
 - Minimum Sound Output 85dB @ 10cm
