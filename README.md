@@ -67,7 +67,7 @@ The circuit is the following:
 
 ## Network Architecture
 
-![alt](img/Network_infrastructure.png)
+![alt](Images/Network_infrastructure.png)
 
 ### IoT Devices with RIOT OS
 The home defender system utilizes IoT devices equipped with the RIOT OS (Real-Time Operating System). These devices, such as the ESP32 v2 Heltec LoRa board, incorporate the necessary hardware components, to monitor the area effectively. RIOT OS provides a lightweight and efficient operating system tailored for resource-constrained IoT devices, ensuring optimal performance and low power consumption.
