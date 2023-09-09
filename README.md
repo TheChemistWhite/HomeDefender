@@ -12,7 +12,7 @@ When it is used: the system is enabled simply connecting it to a power source li
 ### Board
 
 #### ESP32 Heltec LoRa32 v2
-<img src="Images/Board.jpg" alt="alt" width="200"/> 
+<img src="Images/board.jpg" alt="alt" width="200"/> 
 The Heltec LoRa32 v2 is a development board with 8 MB Flash that uses the EPS32 chip directly. It integrates:
 - a SemTech SX1276 or SX1278 for LoRaWAN communication and
 - a SSD1306 0.96-inch 128x64 OLED display connected via I2C. 
