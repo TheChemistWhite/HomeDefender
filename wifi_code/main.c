@@ -144,6 +144,26 @@ int main(void) {
 
                 sprintf(json, "{\"id\": \"%d\", \"pir\": \"%d\", \"msg\": \"MOTION DETECTED\"}",
                         1, val;
+
+                 char* message_motion = json;
+
+                MQTTMessage message;
+                message.qos = QOS2;
+                message.retained = IS_RETAINED_MSG;
+                message.payload = message_motion;
+                message.payloadlen = strlen(message.payload);
+        
+                char* topic = "homeDefender";
+        
+                int rc;
+                if ((rc = MQTTPublish(&client, topic, &message)) < 0) {
+                    printf("mqtt_example: Unable to publish (%d)\n", rc);
+                }
+                else {
+                    printf("mqtt_example: Message (%s) has been published to topic %s "
+                        "with QOS %d\n",
+                        (char *)message.payload, topic, (int)message.qos);
+                }
                 
                 last_motion_time = xtimer_now();
             }
@@ -158,29 +178,28 @@ int main(void) {
                 sprintf(json, "{\"id\": \"%d\", \"pir\": \"%d\", \"msg\": \"Motion Stopped\"}",
                         1, val;
 
+                MQTTMessage message;
+                message.qos = QOS2;
+                message.retained = IS_RETAINED_MSG;
+                message.payload = message_motion;
+                message.payloadlen = strlen(message.payload);
+        
+                char* topic = "homeDefender";
+        
+                int rc;
+                if ((rc = MQTTPublish(&client, topic, &message)) < 0) {
+                    printf("mqtt_example: Unable to publish (%d)\n", rc);
+                }
+                else {
+                    printf("mqtt_example: Message (%s) has been published to topic %s "
+                        "with QOS %d\n",
+                        (char *)message.payload, topic, (int)message.qos);
+                }
+
                 last_motion_time = xtimer_now();
             }
         }
 
-        char* message_motion = json;
-
-        MQTTMessage message;
-        message.qos = QOS2;
-        message.retained = IS_RETAINED_MSG;
-        message.payload = message_motion;
-        message.payloadlen = strlen(message.payload);
-
-        char* topic = "homeDefender";
-
-        int rc;
-        if ((rc = MQTTPublish(&client, topic, &message)) < 0) {
-            printf("mqtt_example: Unable to publish (%d)\n", rc);
-        }
-        else {
-            printf("mqtt_example: Message (%s) has been published to topic %s "
-                "with QOS %d\n",
-                (char *)message.payload, topic, (int)message.qos);
-        }
     }
 
     return 0;
