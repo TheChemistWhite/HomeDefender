@@ -117,6 +117,14 @@ int main(void) {
 
                 sprintf(json, "{\"id\": \"%d\", \"pir\": \"%d\", \"msg\": \"MOTION DETECTED\"}",
                         1, val;
+                msg_to_be_sent = (uint8_t *)json;
+
+                printf("Sending: %s\n", msg_to_be_sent);
+                uint8_t ret = semtech_loramac_send(&loramac, (uint8_t*)msg_to_be_sent, strlen(json));
+                if (ret != SEMTECH_LORAMAC_TX_DONE){
+                    printf("Cannot send message '%s', ret code: %d\n", msg_to_be_sent, ret);
+                    free(msg_to_be_sent);
+                }
                 
                 last_motion_time = xtimer_now();
             }
@@ -130,20 +138,21 @@ int main(void) {
 
                 sprintf(json, "{\"id\": \"%d\", \"pir\": \"%d\", \"msg\": \"Motion Stopped\"}",
                         1, val;
+                
+                msg_to_be_sent = (uint8_t *)json;
+
+                printf("Sending: %s\n", msg_to_be_sent);
+                uint8_t ret = semtech_loramac_send(&loramac, (uint8_t*)msg_to_be_sent, strlen(json));
+                if (ret != SEMTECH_LORAMAC_TX_DONE){
+                    printf("Cannot send message '%s', ret code: %d\n", msg_to_be_sent, ret);
+                    free(msg_to_be_sent);
+                }
 
                 last_motion_time = xtimer_now();
             }
         }
 
-        msg_to_be_sent = (uint8_t *)json;
-
-        printf("Sending: %s\n", msg_to_be_sent);
-        uint8_t ret = semtech_loramac_send(&loramac, (uint8_t*)msg_to_be_sent, strlen(json));
-        if (ret != SEMTECH_LORAMAC_TX_DONE)
-        {
-            printf("Cannot send message '%s', ret code: %d\n", msg_to_be_sent, ret);
-            free(msg_to_be_sent);
-        }
+        
     }
 
     return 0;
