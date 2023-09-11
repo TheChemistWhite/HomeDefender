@@ -63,7 +63,7 @@ square wave to Drive it.
 
 The circuit is the following:
 
-![alt](Images/prototype(2).jpg)
+![alt](Images/prototype (2).jpg)
 
 
 ## Network Architecture
