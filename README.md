@@ -63,7 +63,7 @@ square wave to Drive it.
 
 The circuit is the following:
 
-![alt]()
+![alt](Images/prototype(2).jpg)
 
 
 ## Network Architecture
@@ -135,4 +135,4 @@ Now, you can flash the board. Locate yourself in `src/wi-fi` and use the command
 For the LoRa part, you have simply to run `sudo BOARD=? BUILD_IN_DOCKER=1 DOCKER="sudo docker" PORT="/dev/ttyUSB0" make all flash term` substitue the '?' with your board (it doesn't work for the esp32-heltec-lora32-v2 board).
 
 ## Link
-- [Blog Post]()
+- [Blog Post](https://www.hackster.io/francione97/home-defender-a-smart-alarm-for-our-home-e5683a)
